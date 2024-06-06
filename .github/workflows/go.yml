@@ -34,7 +34,8 @@ jobs: # passo-a-passo que deverá ser executado para concluir a tarefa
       run: go test -v main_test.go
   
   build:
-    needs: test #needs: especifica que para o build rodar, o test deve ter rodado com sucesso
+    needs: test #needs: especifica que para o build rodar, o test deve ter rodado com sucesso. SEM O NEEDS, O TEST E BUILD
+    #SERÃO EXECUTADOS SIMULTANEAMENTE
     runs-on: ubuntu-latest 
     steps:
     - uses: actions/checkout@v4
